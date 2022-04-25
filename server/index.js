@@ -6,6 +6,7 @@ import cors from 'cors';
 
 import userRoutes from './routes/user_r.js'
 import chatsRoutes from './routes/chats_r.js'
+import evaluation from './routes/evaluation_r.js'
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(cors());
 
 app.use('/users', userRoutes);
 app.use('/chats', chatsRoutes);
+app.use('/evaluations', evaluation);
 
 const connection = mongoose.connection;
 connection.once("open", () => {
